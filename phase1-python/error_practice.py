@@ -65,9 +65,11 @@
 # ============================================================
 # 6. FileNotFoundError（ファイルが見つからない）
 # ============================================================
-
-# with open("存在しないファイル.txt", "r") as f:
-#     content = f.read()
+#try:
+#     with open("存在しないファイル.txt", "r") as f:
+#        content = f.read()
+#except FileNotFoundError:
+#    print("存在しないファイルです")
 
 # 原因：指定したファイルが存在しない
 # 修正：ファイルパスを正しいものにするか、try-exceptで処理する
@@ -122,12 +124,12 @@
 # ============================================================
 # チェックリスト（自分の言葉でノートに書く）
 # ============================================================
-# □ SyntaxError  → 何を見ればいいか分かる
-# □ NameError    → 何を見ればいいか分かる
-# □ TypeError    → 何を見ればいいか分かる
-# □ IndexError   → 何を見ればいいか分かる
-# □ KeyError     → 何を見ればいいか分かる
-# □ FileNotFoundError → 何を見ればいいか分かる
-# □ ZeroDivisionError → 何を見ればいいか分かる
-# □ AttributeError    → 何を見ればいいか分かる
-# □ ImportError  → 何を見ればいいか分かる
+# □ SyntaxError  → 文法に間違いがある。':'が抜けているなど、抜けを要チェック。
+# □ NameError    → 変数が定義されていない。"変数"=□ がないか確認。
+# □ TypeError    → 文字列と数字で計算できない。strは文字列、intは整数
+# □ IndexError   → indexのより大きい物を指定した。
+# □ KeyError     → key(ラベル)が存在しないため、値が出せない。格納されていないとき、.getでデフォルト値を設定するか、Noneを出すようにする。
+# □ FileNotFoundError → try-exceptで処理。except ○○
+# □ ZeroDivisionError → 0で割ることができない。try-exceptで無理やり実行
+# □ AttributeError    → 存在しないメソッドを呼んだ。文字列か数値かどちらに対して有効か
+# □ ImportError  → 具体的にModuleNotFoundErrorがでた。存在しないモジュールをインポート
