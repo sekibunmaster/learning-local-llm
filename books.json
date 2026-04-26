@@ -1,0 +1,17 @@
+[
+  {
+    "title": "雪国",
+    "author": "川端康成",
+    "is_checked_out": true
+  },
+  {
+    "title": "ラプラスの魔女",
+    "author": "東野圭吾",
+    "is_checked_out": true
+  },
+  {
+    "title": "罪と罰",
+    "author": "ドストエフスキー",
+    "is_checked_out": false
+  }
+]
