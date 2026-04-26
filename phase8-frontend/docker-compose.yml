@@ -1,0 +1,21 @@
+services:
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+  ragapp:
+    build: ./ragapp
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - ollama
+    command: >
+      sh -c "sleep 10 && uvicorn main:app --host 0.0.0.0 --port 8000"
+
+volumes:
+  ollama_data:
